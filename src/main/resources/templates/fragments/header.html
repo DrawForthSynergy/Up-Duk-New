@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<!--<div th:fragment="header">-->
+<!--    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">-->
+<!--        <button class="navbar-toggler" type="button" data-toggle="collapse"-->
+<!--                data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"-->
+<!--                aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <a class="navbar-brand" href="/">Shop</a>-->
+
+<!--        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">-->
+<!--            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">-->
+<!--                <li class="nav-item" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">-->
+<!--                    <a class="nav-link" href="/admin/item/new">상품 등록</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">-->
+<!--                    <a class="nav-link" href="/admin/items">상품 관리</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item" sec:authorize="isAuthenticated()">-->
+<!--                    <a class="nav-link" href="/cart">장바구니</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item" sec:authorize="isAuthenticated()">-->
+<!--                    <a class="nav-link" href="/orders">구매이력</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item" sec:authorize="isAnonymous()">-->
+<!--                    <a class="nav-link" href="/members/login">로그인</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item" sec:authorize="isAuthenticated()">-->
+<!--                    <a class="nav-link" href="/members/logout">로그아웃</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--            <form class="form-inline my-2 my-lg-0" th:action="@{/}" method="get">-->
+<!--                <input name="searchQuery" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </nav>-->
+<!--</div>-->
+
+<header>
+    <div>
+        <div class="Kimg">
+            <img class="Kduksung" src="https://static.wixstatic.com/media/1a8c11_b1395f489dff42a7884d94bd7759d15a~mv2.jpg/v1/fill/w_437,h_101,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%EB%8D%95%EC%84%B1%EC%97%AC%EB%8C%80%20%EB%A1%9C%EA%B3%A0_edited.jpg">
+            <button> <img class="KloginImg" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1b3bac2f-0697-483c-8e23-8697db4cdf65/user_icon_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T062907Z&X-Amz-Expires=86400&X-Amz-Signature=309df45ff43def5abed8dfde51fa2792c07596696583a07fcaee54be87e3a055&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22user_icon_1.png%22&x-id=GetObject"></button>
+        </div>
+        <div class="KsmallTitle">
+            <span>덕대생들의 취업UP 정보 공유 커뮤니티</span>
+        </div>
+        <div class="Ktitle">
+            <spna>UP-Duk</spna>
+        </div>
+
+    </div>
+    <nav class="Knav">
+        <div class="Knavbar">
+            <ul>
+                <li><span>홈</span></li>
+                <li><span>커뮤니티</span></li>
+                <li><span>커뮤니티</span></li>
+                <li><span>멘토링</span></li>
+            </ul>
+        </div>
+    </nav>
+
+</header>
+
+
+</html>

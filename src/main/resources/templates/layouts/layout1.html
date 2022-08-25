@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <th:block layout:fragment="script"></th:block>
+    <th:block layout:fragment="css"></th:block>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+        header{
+            background-color:white;
+        }
+        body{
+            margin:0px;
+        }
+        .Kduksung{
+            width:20%;
+            height:10%;
+        }
+        .Kimg{
+            display:flex;
+        }
+        .Kimg button{
+            border:none;
+            background:none;
+            margin:0 20px;
+            position:relative;
+            right:-74%;
+        }
+        .KloginImg{
+            width:40px;
+            height:40px;
+        }
+        .KsmallTitle{
+            font-family: 'Gothic A1', sans-serif;
+            text-align:center;
+            line-height:26.79px;
+            font-size:20px;
+        }
+        .Ktitle{
+            font-family: 'Gothic A1', sans-serif;
+            text-align:center;
+            font-size:90px;
+        }
+        .Knav{
+            position:sticky;
+            top:0;
+        }
+        .Knavbar{
+            width:100%;
+            height:47px;
+            background-color:#B70050
+        }
+        footer{
+            text-align:center;
+            background-color:#F7F7F7;
+        }
+
+        .Knavbar ul{
+            margin:0 350px;
+            list-style:none;
+            padding-left:0px;
+            display:flex;
+        }
+        .Knavbar li{
+            line-height:47px;
+            align-items:center;
+            color:white;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<div th:replace="fragments/header::header"></div>
+
+<div layout:fragment="content" class="content">
+
+</div>
+
+<div th:replace="fragments/footer::footer"></div>
+
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Up-duk</title>
+    <script src="https://kit.fontawesome.com/96cee38240.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/head.css">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link th:href="@{/css/layout1.css}" rel="stylesheet">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+
+    <th:block layout:fragment="script"></th:block>
+    <th:block layout:fragment="css"></th:block>
+    <!--    <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">-->
+    <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+        header{
+            background-color:white;
+        }
+        body{
+            margin:0px;
+        }
+        .Kduksung{
+            width:20%;
+            height:10%;
+        }
+        .Kimg{
+            display:flex;
+        }
+        .Kimg button{
+            border:none;
+            background:none;
+            margin:0 20px;
+            position:relative;
+            right:-74%;
+        }
+        .KloginImg{
+            width:40px;
+            height:40px;
+        }
+        .KsmallTitle{
+            font-family: 'Gothic A1', sans-serif;
+            text-align:center;
+            line-height:26.79px;
+            font-size:20px;
+        }
+        .Ktitle{
+            font-family: 'Gothic A1', sans-serif;
+            text-align:center;
+            font-size:90px;
+        }
+        .Knav{
+            position:sticky;
+            top:0;
+        }
+        .Knavbar{
+            width:100%;
+            height:47px;
+            background-color:#B70050
+        }
+        footer{
+            text-align:center;
+            background-color:#F7F7F7;
+        }
+
+        .Knavbar ul{
+            margin:0 350px;
+            list-style:none;
+            padding-left:0px;
+            display:flex;
+        }
+        .Knavbar li{
+            line-height:47px;
+            align-items:center;
+            color:white;
+            margin:0 auto;
+        }
+    </style>
+    <script>
+       $(document).ready(function () {
+            var width = $('[data-role="slider"]').attr('data-width');
+            var height = $('[data-role="slider"]').attr('data-height');
+            var count = $('[data-role="slider"] div.item').length;
+
+            $('[data-role="slider"]').css({
+                position: 'relative',
+                overflow: 'hidden',
+                width: width,
+                height: height
+            }).find('.container').css({
+                position: 'absolute',
+                width: count * width,
+                overflow: 'hidden'
+            }).find('.item').css({
+                width: width,
+                height: height,
+                float: 'left'
+            });
+
+            var currentPage = 0;
+            var changePage = function () {
+                $('[data-role="slider"] > .container').animate({
+                    left: -currentPage * width
+                }, 500)
+            };
+
+            $('#left-button').click(function () {
+                if (currentPage > 0) {
+                    currentPage = currentPage - 1;
+                    changePage();
+                }
+            });
+
+            $('#right-button').click(function () {
+                if (currentPage < count - 1) {
+                    currentPage = currentPage + 1;
+                    changePage();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+
+<!--    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">-->
+<!--        <button class="navbar-toggler" type="button" data-toggle="collapse"-->
+<!--                data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"-->
+<!--                aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <a class="navbar-brand" href="/">Shop</a>-->
+
+<!--        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">-->
+<!--            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">-->
+<!--                <li class="nav-item" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">-->
+<!--                    <a class="nav-link" href="/admin/item/new">상품 등록</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">-->
+<!--                    <a class="nav-link" href="/community">상품 관리</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item" sec:authorize="isAuthenticated()">-->
+<!--                    <a class="nav-link" href="/cart">장바구니</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item" sec:authorize="isAuthenticated()">-->
+<!--                    <a class="nav-link" href="/orders">구매이력</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item" sec:authorize="isAnonymous()">-->
+<!--                    <a class="nav-link" href="/members/login">로그인</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item" sec:authorize="isAuthenticated()">-->
+<!--                    <a class="nav-link" href="/members/logout">로그아웃</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--            <form class="form-inline my-2 my-lg-0" th:action="@{/}" method="get">-->
+<!--                <input name="searchQuery" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </nav>-->
+<header>
+    <div>
+        <div class="Kimg">
+            <img class="Kduksung" src="https://static.wixstatic.com/media/1a8c11_b1395f489dff42a7884d94bd7759d15a~mv2.jpg/v1/fill/w_437,h_101,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%EB%8D%95%EC%84%B1%EC%97%AC%EB%8C%80%20%EB%A1%9C%EA%B3%A0_edited.jpg">
+            <button> <img class="KloginImg" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1b3bac2f-0697-483c-8e23-8697db4cdf65/user_icon_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T062907Z&X-Amz-Expires=86400&X-Amz-Signature=309df45ff43def5abed8dfde51fa2792c07596696583a07fcaee54be87e3a055&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22user_icon_1.png%22&x-id=GetObject"></button>
+        </div>
+        <div class="KsmallTitle">
+            <span>덕대생들의 취업UP 정보 공유 커뮤니티</span>
+        </div>
+        <div class="Ktitle">
+            <spna>UP-Duk</spna>
+        </div>
+
+    </div>
+    <nav class="Knav">
+        <div class="Knavbar">
+            <ul>
+                <li><span>홈</span></li>
+                <li><span>커뮤니티</span></li>
+                <li><span>커뮤니티</span></li>
+                <li><span>멘토링</span></li>
+            </ul>
+        </div>
+    </nav>
+
+</header>
+
+
+
+<main>
+    <div class="position-relative overflow-hidden text-center bg-light" style="width:100%; height:100%; background-size:cover; background-image:url('https://s3.us-west-2.amazonaws.com/secure.notion-static.com/56e78150-d623-47ca-86ea-a14cc4e7fd4f/bg1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220824%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220824T130619Z&X-Amz-Expires=86400&X-Amz-Signature=6172e68a088bb83e6b9601c54bba609cc161ec4e6306a9d560fbbd74d842dfcf&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22bg1.png%22&x-id=GetObject'); background-repeat: no-repeat;  background-size:cover;" >
+        <!--        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" style="background-image: url('data:image/png;base64,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'); background-repeat:no-repeat; background-size:cover;" >-->
+
+        <div class="col-md-5 p-lg-5 mx-auto my-5" style="background-image: url('/img/bg-masthead.jpg');">
+            <!--            <h1 class="display-4 fw-normal">Up-Duk</h1>-->
+            <p class="lead fw-normal">직군별, 전공별로 선후배 및 동기들의 취업 후기 및 경험담을 공유해보세요.</p>
+
+            <section class="call-to-action text-white text-center" id="signup">
+                <div class="container position-relative">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-6">
+                            <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
+                                <!-- Email address input-->
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control form-control-lg" id="emailAddressBelow" type="email" data-sb-validations="required,email" />
+                                    </div>
+                                    <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Search</button></div>
+                                </div>
+
+                                <!-- Submit success message-->
+                                <!---->
+                                <!-- This is what your users will see when the form-->
+                                <!-- has successfully submitted-->
+                                <div class="d-none" id="submitSuccessMessage">
+                                    <div class="text-center mb-3">
+                                        <div class="fw-bolder">Form submission successful!</div>
+                                        <p>To activate this form, sign up at</p>
+                                        <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                    </div>
+                                </div>
+                                <!-- Submit error message-->
+                                <!---->
+                                <!-- This is what your users will see when there is-->
+                                <!-- an error submitting the form-->
+                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="product-device shadow-sm d-none d-md-block"></div>
+        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+        <table style="margin-left: auto;
+    margin-right: auto;">
+            <tr>
+                <td><div>
+                    <!--                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" style="opacity: 0.5;" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/><text>140x140</text></svg>-->
+                    <div class="circle" style="width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #fff;
+  line-height: 140px;
+  opacity: 0.6;
+  text-align: center;
+  background: #000">직무별</div>
+                    <!--                    <p style="margin-top: 30px"><a class="btn btn-secondary" href="#">직군별</a></p>-->
+                </div><!-- /.col-lg-4 --></td>
+                <td><div style="margin-left:100px">
+                    <!--                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" style="opacity: 0.5;"role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/><text>전공</text></svg>-->
+                    <div class="circle" style="width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #fff;
+  line-height: 140px;
+  opacity: 0.6;
+  text-align: center;
+  background: #000">전공</div>
+                    <!--                    <p style="margin-top: 30px"><a class="btn btn-secondary" href="#">전공별</a></p>-->
+                </div><!-- /.col-lg-4 --></td>
+                <td><div style="margin-left:100px">
+                    <!--                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" style="opacity: 0.5;" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/><text>140x140</text></svg>-->
+                    <div class="circle" style="width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #fff;
+  line-height: 140px;
+  opacity: 0.6;
+  text-align: center;
+  background: #000">멘토</div>
+                    <!--                    <p style="margin-top: 30px"><a class="btn btn-secondary" href="#">멘토링</a></p>-->
+                </div><!-- /.col-lg-4 --></td>
+            </tr>
+        </table>
+        <br><br><br>
+
+    </div>
+    <!--    <div class="footer" th:fragment="footer">-->
+    <!--        <footer class="container py-5">-->
+    <!--            <div class="row">-->
+    <!--                <div class="col-12 col-md">-->
+    <!--                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>-->
+    <!--                    <small class="d-block mb-3 text-muted">&copy; 2017–2022</small>-->
+    <!--                </div>-->
+    <!--                <div class="col-6 col-md">-->
+    <!--                    <h5>Features</h5>-->
+    <!--                    <ul class="list-unstyled text-small">-->
+    <!--                        <li><a class="link-secondary" href="#">Cool stuff</a></li>-->
+    <!--                        <li><a class="link-secondary" href="#">Random feature</a></li>-->
+    <!--                        <li><a class="link-secondary" href="#">Team feature</a></li>-->
+    <!--                        <li><a class="link-secondary" href="#">Stuff for developers</a></li>-->
+    <!--                        <li><a class="link-secondary" href="#">Another one</a></li>-->
+    <!--                        <li><a class="link-secondary" href="#">Last time</a></li>-->
+    <!--                    </ul>-->
+    <!--                </div>-->
+    <!--                <div class="col-6 col-md">-->
+    <!--                    <h5>Resources</h5>-->
+    <!--                    <ul class="list-unstyled text-small">-->
+    <!--                        <li><a class="link-secondary" href="#">Resource name</a></li>-->
+    <!--                        <li><a class="link-secondary" href="#">Resource</a></li>-->
+    <!--                        <li><a class="link-secondary" href="#">Another resource</a></li>-->
+    <!--                        <li><a class="link-secondary" href="#">Final resource</a></li>-->
+    <!--                    </ul>-->
+    <!--                </div>-->
+    <!--                <div class="col-6 col-md">-->
+    <!--                    <h5>Resources</h5>-->
+    <!--                    <ul class="list-unstyled text-small">-->
+    <!--                        <li><a class="link-secondary" href="#">Business</a></li>-->
+    <!--                        <li><a class="link-secondary" href="#">Education</a></li>-->
+    <!--                        <li><a class="link-secondary" href="#">Government</a></li>-->
+    <!--                        <li><a class="link-secondary" href="#">Gaming</a></li>-->
+    <!--                    </ul>-->
+    <!--                </div>-->
+    <!--                <div class="col-6 col-md">-->
+    <!--                    <h5>About</h5>-->
+    <!--                    <ul class="list-unstyled text-small">-->
+    <!--                        <li><a class="link-secondary" href="#">Team</a></li>-->
+    <!--                        <li><a class="link-secondary" href="#">Locations</a></li>-->
+    <!--                        <li><a class="link-secondary" href="#">Privacy</a></li>-->
+    <!--                        <li><a class="link-secondary" href="#">Terms</a></li>-->
+    <!--                    </ul>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </footer>-->
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 class="font_2" style="text-align:center;">
+    <span style="line-height: 2.00em; text-align:center;">
+        <span style = "font-weight:bold; color: #B70050; text-shadow: 2px 2px 2px gray;">
+            <span style="font-size: 72px">준비</span>
+            <span style="font-size: 50px">부터</span>
+            <span style="font-size: 72px">취업</span>
+            <span style="font-size: 50px">까지,</span>
+            <br>
+            <span style="font-size: 50px">당신의</span>
+            <span style="font-size: 72px">이야기</span>
+            <span style="font-size: 50px">를 들려주세요</span>
+        </span>
+    </span>
+    </h1>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- 게시글 -->
+    <div style="margin 40px 0; padding 10px 20px;">
+        <div data-role="slider" data-width="500" data-height="400" style="margin: 0 auto; color: orange;">
+            <div class="container" style="overflow: hidden; display: inline;">
+                <!-- 갤러리 첫번째 페이지 -->
+                <div class="item">
+                    <a href="">
+                        <img src="https://t1.kakaocdn.net/kakaocorp/kakaocorp/admin/news/65f0b187018200001.png" width="500" height="300">
+                        <h3>내가 카카오에 입사할 수 있었던 5가지 이유</h3>
+                    </a>
+                </div>
+                <!-- 갤러리 두번째 페이지 -->
+                <div class="item">
+                    <a href="">
+                        <img src="https://www.gizmochina.com/wp-content/uploads/2019/10/samsung.jpg" width="500" height="300">
+                        <h3>비전공자부터 삼성 개발직까지 3년</h3>
+                    </a>
+                </div>
+                <div class="item">
+                    <h1>내가 삼성에 입사할 수 있었던 2가지 이유</h1>
+                    <p>내가 삼성에 입사할 수 있었던 것은 여러가지 노력해서이다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--좌 우 이동 버튼-->
+    <div style="margin: 0 auto; text-align: center;">
+        <button id="left-button" style="background-color: white; border-style: hidden;" >
+            <h3>👈</h3>
+        </button>
+        <button id="right-button" style="background-color: white; border-style: hidden;">
+            <h3>👉</h3>
+        </button>
+    </div>
+
+</main>
+</body>
+</html>
+
+
+
+
