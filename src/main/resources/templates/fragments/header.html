@@ -57,10 +57,9 @@
     <nav class="Knav">
         <div class="Knavbar">
             <ul>
-                <li><span>홈</span></li>
-                <li><span>커뮤니티</span></li>
-                <li><span>커뮤니티</span></li>
-                <li><span>멘토링</span></li>
+                <li class="nav-item" sec:authorize="isAnonymous()">
+                    <a class="nav-link" href="/members/login">로그인</a>
+                </li>
             </ul>
         </div>
     </nav>

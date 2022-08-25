@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Up-duk</title>
+    <link  th:href="@{/css/consulting.css}" rel="stylesheet">
+
+</head>
+<body>
+
+<p style="text-align: center; font-size:30px; margin-top: 60px;"><span style="color:#670211">UP-Duk<br><br></span>글 작성</p>
+<form action="{%url 'community:create'%}" method="post" enctype="multipart/form-data">
+
+    <div class="board_wrap">
+        <div class="board_write">
+            <div class="title">
+                <dl>
+                    <dt>제목</dt>
+                    <dd><input type="text" placeholder="제목 입력" name="title"></dd>
+                </dl>
+            </div>
+
+            <div class="info" style="border-top: 1px dashed #670211;">
+
+                <dl>
+                    <dt>전공</dt>
+                   <dd>
+                        <select name="opage" style="width:85px;height:35px;" >
+                            <option value="컴퓨터공학전공">컴퓨터공학전공</option>
+                            <option value="IT미디어공학전공">IT미디어공학전공</option>
+                            <option value="사이버보안전공">사이버보안전공</option>
+                            <option value="소프트웨어전공">소프트웨어전공</option>
+
+                        </select>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>직무</dt>
+                    <dd>
+                        <select name="opage" style="width:85px;height:35px;" >
+                            <option value="마케팅">마케팅</option>
+                            <option value="영업">영업</option>
+                            <option value="IT">IT</option>
+                        </select>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt style="display: inline-block;">사진 첨부</dt>
+                    <input id="file" type="file" name="image" style="width: 180px; padding-left: 30px;">
+                </dl>
+            </div>
+            <div class="cont">
+                <textarea placeholder="글을 작성하세요." name="body" style="resize:none;"></textarea>
+            </div>
+        </div>
+        <div class="bt_wrap">
+            <button type="submit" style="border:0; width:120px; font-size: 18px; color: white; background-color: #670211; height: 43px;">등록</button>
+            <button type="submit" style="border:0; outline: none; margin: 10px"><a href="" style="color:black;" onclick="change(this)">취소</a></button>
+        </div>
+    </div>
+</form>
+</body>
+</html>

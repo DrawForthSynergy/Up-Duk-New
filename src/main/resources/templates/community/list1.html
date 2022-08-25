@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="kr"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/list2.css}">
+    <!--        css 파일은 list_3.css을 이용한다. -->
+    <title>list_1</title>
+
+    <!--다른 html 파일의 내용을 현재 html 파일에 불러오는 방법? -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+        	$(".post_box").load("../fragments/post.html #title");
+        });
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+        header{
+            background-color:white;
+        }
+        body{
+            margin:0px;
+        }
+        .Kduksung{
+            width:20%;
+            height:10%;
+        }
+        .Kimg{
+            display:flex;
+        }
+        .Kimg button{
+            border:none;
+            background:none;
+            margin:0 20px;
+            position:relative;
+            right:-74%;
+        }
+        .KloginImg{
+            width:40px;
+            height:40px;
+        }
+        .KsmallTitle{
+            font-family: 'Gothic A1', sans-serif;
+            text-align:center;
+            line-height:26.79px;
+            font-size:20px;
+        }
+        .Ktitle{
+            font-family: 'Gothic A1', sans-serif;
+            text-align:center;
+            font-size:90px;
+        }
+        .Knav{
+            position:sticky;
+            top:0;
+        }
+        .Knavbar{
+            width:100%;
+            height:47px;
+            background-color:#B70050
+        }
+        footer{
+            text-align:center;
+            background-color:#F7F7F7;
+        }
+
+        .Knavbar ul{
+            margin:0 350px;
+            list-style:none;
+            padding-left:0px;
+            display:flex;
+        }
+        .Knavbar li{
+            line-height:47px;
+            align-items:center;
+            color:white;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div>
+        <div class="Kimg">
+            <img class="Kduksung" src="https://static.wixstatic.com/media/1a8c11_b1395f489dff42a7884d94bd7759d15a~mv2.jpg/v1/fill/w_437,h_101,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%EB%8D%95%EC%84%B1%EC%97%AC%EB%8C%80%20%EB%A1%9C%EA%B3%A0_edited.jpg">
+            <button> <a href="/profile"><img class="KloginImg" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1b3bac2f-0697-483c-8e23-8697db4cdf65/user_icon_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T062907Z&X-Amz-Expires=86400&X-Amz-Signature=309df45ff43def5abed8dfde51fa2792c07596696583a07fcaee54be87e3a055&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22user_icon_1.png%22&x-id=GetObject"></a></button>
+        </div>
+        <div class="KsmallTitle">
+            <span>덕대생들의 취업UP 정보 공유 커뮤니티</span>
+        </div>
+        <div class="Ktitle">
+            <spna>UP-Duk</spna>
+        </div>
+
+    </div>
+    <nav class="Knav">
+        <div class="Knavbar">
+            <ul>
+                <li><span>홈</span></li>
+                <li><span>전공</span></li>
+                <li><span>직무</span></li>
+
+            </ul>
+        </div>
+    </nav>
+
+</header>
+
+<div id="sidebar_a">
+    <!--<ul>left sidebar</ul>-->
+</div>
+
+<div id="sidebar_b">
+    <!--<ul>right sidebar</ul>-->
+
+</div>
+
+<div id="content">
+    <br><br>
+    <nav>
+        <span><a class="list_bar" href="list_1.html">새싹</a></span>
+        <span><a class="list_bar" href="list_2.html">나무</a></span>
+        <span><a class="list_bar" href="list_3.html">열매</a></span>
+    </nav>
+
+    <!--게시물을 보여줄
+    <a href="../fragments/post.html">
+        <div class="post_box"><href 링크는 제작한 html 파일-->
+    <!--<ul>작성된 게시물 </ul>-->
+    <!--</div>
+</a>-->
+    <a href="../fragments/post.html">
+        <div class="post_box"><!--href 링크는 제작한 html 파일-->
+            <!--<ul>작성된 게시물 </ul>-->
+        </div>
+        <div class="post_box2">
+            <img class="point_icon" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/70461bbb-77b4-4ec7-b996-a0d4ec17357a/watch.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T171530Z&X-Amz-Expires=86400&X-Amz-Signature=b02c608713bdd1dbea6c46cdb9bb66f0657c8f29f1611e1e49dbe8006c0846d3&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22watch.png%22&x-id=GetObject">
+            <img class="point_icon" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/323bb34d-5a61-4b92-b2c8-34267001f588/comment.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T171526Z&X-Amz-Expires=86400&X-Amz-Signature=418e68ad747dcb6a0245d86b284846071de57392c3cfcd6aeb95c18d0737ed3e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22comment.png%22&x-id=GetObject">
+            <img class="point_icon" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2dfc37e1-9eaf-42db-8bcd-d17e308ec284/heart.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T171522Z&X-Amz-Expires=86400&X-Amz-Signature=b2b4a1cc02d5b4647ba17ef30b5aef8ec3229db6d9fcd27ea11bb55756451c5e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22heart.png%22&x-id=GetObject">
+        </div>
+    </a>
+    <br>
+    <a href="../fragments/post.html">
+        <div class="post_box"><!--href 링크는 제작한 html 파일-->
+            <!--<ul>작성된 게시물 </ul>-->
+        </div>
+        <div class="post_box2">
+            <img class="point_icon" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/70461bbb-77b4-4ec7-b996-a0d4ec17357a/watch.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T171530Z&X-Amz-Expires=86400&X-Amz-Signature=b02c608713bdd1dbea6c46cdb9bb66f0657c8f29f1611e1e49dbe8006c0846d3&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22watch.png%22&x-id=GetObject">
+            <img class="point_icon" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/323bb34d-5a61-4b92-b2c8-34267001f588/comment.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T171526Z&X-Amz-Expires=86400&X-Amz-Signature=418e68ad747dcb6a0245d86b284846071de57392c3cfcd6aeb95c18d0737ed3e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22comment.png%22&x-id=GetObject">
+            <img class="point_icon" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2dfc37e1-9eaf-42db-8bcd-d17e308ec284/heart.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T171522Z&X-Amz-Expires=86400&X-Amz-Signature=b2b4a1cc02d5b4647ba17ef30b5aef8ec3229db6d9fcd27ea11bb55756451c5e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22heart.png%22&x-id=GetObject">
+        </div>
+    </a>
+    <br>
+    <a href="../fragments/post.html">
+        <div class="post_box"><!--href 링크는 제작한 html 파일-->
+            <!--<ul>작성된 게시물 </ul>-->
+        </div>
+        <div class="post_box2">
+            <img class="point_icon" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/70461bbb-77b4-4ec7-b996-a0d4ec17357a/watch.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T171530Z&X-Amz-Expires=86400&X-Amz-Signature=b02c608713bdd1dbea6c46cdb9bb66f0657c8f29f1611e1e49dbe8006c0846d3&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22watch.png%22&x-id=GetObject">
+            <img class="point_icon" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/323bb34d-5a61-4b92-b2c8-34267001f588/comment.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T171526Z&X-Amz-Expires=86400&X-Amz-Signature=418e68ad747dcb6a0245d86b284846071de57392c3cfcd6aeb95c18d0737ed3e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22comment.png%22&x-id=GetObject">
+            <img class="point_icon" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2dfc37e1-9eaf-42db-8bcd-d17e308ec284/heart.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T171522Z&X-Amz-Expires=86400&X-Amz-Signature=b2b4a1cc02d5b4647ba17ef30b5aef8ec3229db6d9fcd27ea11bb55756451c5e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22heart.png%22&x-id=GetObject">
+        </div>
+    </a>
+    <br>
+    <a href="../fragments/post.html">
+        <div class="post_box"><!--href 링크는 제작한 html 파일-->
+            <!--<ul>작성된 게시물 </ul>-->
+        </div>
+        <div class="post_box2">
+            <img class="point_icon" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/70461bbb-77b4-4ec7-b996-a0d4ec17357a/watch.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T171530Z&X-Amz-Expires=86400&X-Amz-Signature=b02c608713bdd1dbea6c46cdb9bb66f0657c8f29f1611e1e49dbe8006c0846d3&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22watch.png%22&x-id=GetObject">
+            <img class="point_icon" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/323bb34d-5a61-4b92-b2c8-34267001f588/comment.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T171526Z&X-Amz-Expires=86400&X-Amz-Signature=418e68ad747dcb6a0245d86b284846071de57392c3cfcd6aeb95c18d0737ed3e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22comment.png%22&x-id=GetObject">
+            <img class="point_icon" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2dfc37e1-9eaf-42db-8bcd-d17e308ec284/heart.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T171522Z&X-Amz-Expires=86400&X-Amz-Signature=b2b4a1cc02d5b4647ba17ef30b5aef8ec3229db6d9fcd27ea11bb55756451c5e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22heart.png%22&x-id=GetObject">
+        </div>
+    </a>
+    <br>
+    <a href="../fragments/post.html">
+        <div class="post_box"><!--href 링크는 제작한 html 파일-->
+            <!--<ul>작성된 게시물 </ul>-->
+        </div>
+        <div class="post_box2">
+            <img class="point_icon" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/70461bbb-77b4-4ec7-b996-a0d4ec17357a/watch.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T171530Z&X-Amz-Expires=86400&X-Amz-Signature=b02c608713bdd1dbea6c46cdb9bb66f0657c8f29f1611e1e49dbe8006c0846d3&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22watch.png%22&x-id=GetObject">
+            <img class="point_icon" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/323bb34d-5a61-4b92-b2c8-34267001f588/comment.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T171526Z&X-Amz-Expires=86400&X-Amz-Signature=418e68ad747dcb6a0245d86b284846071de57392c3cfcd6aeb95c18d0737ed3e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22comment.png%22&x-id=GetObject">
+            <img class="point_icon" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2dfc37e1-9eaf-42db-8bcd-d17e308ec284/heart.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T171522Z&X-Amz-Expires=86400&X-Amz-Signature=b2b4a1cc02d5b4647ba17ef30b5aef8ec3229db6d9fcd27ea11bb55756451c5e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22heart.png%22&x-id=GetObject">
+        </div>
+    </a>
+
+</div>
+
+<div id="footer">
+    <ul>©2022 by Hype-girl</ul>
+    <ul>2022 1st IT Engineering Alliance Hackathon </ul>
+    <ul>Draw forth Synergy</ul>
+
+</div>
+
+</body>
+</html>

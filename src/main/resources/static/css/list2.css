@@ -1,0 +1,132 @@
+/* text decoration | fonts*/
+/* 한글 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+/* 영문 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+
+#ul{
+    font-family: 'Gothic A1', sans-serif;
+    font-family: 'Gothic A1', sans-serif;
+}
+
+
+#header{
+    border: 5px solid red;
+    background-color: white;
+    height:250px;
+    margin-bottom: 10px;
+
+}
+
+#content{
+    border: 2px solid white;
+    background-color: white;
+    margin-bottom: 10px;
+    width: 70%;
+    margin-right: 15%;
+    margin-left: 15%;
+    float: center;
+    height: 1000px;
+}
+
+nav{
+  height: 50px;
+  padding: 0.5rem;
+  color: #99918A;
+  background: white;
+  font-weight: bold;
+  /*display: flex;*/
+  justify-content : center;
+  align-items: center;
+
+}
+
+span{
+    padding: 30px;
+    margin: 50px;
+    padding-top: 10px;
+    font-size: 16px;
+    height: 30px;
+
+}
+
+/* 마우스 커서 올렸을 때 */
+span:hover{
+    background-color: #B70050;
+    color: white;
+}
+
+span:active{
+    background-color:  #B70050;
+    color: black;
+    text: solid;
+}
+
+span:visited{
+    background-color: #B70050;
+    color: white;
+}
+
+.list_bar{
+    color: #99918A;
+    text-decoration: none;
+    margin-top: 60px;
+}
+
+.post_box{
+    border-top:5px solid;
+    padding:40px;
+    padding-top: 20;
+    padding-bottom: 0px;
+    margin: 10px;
+    border-color: gray;
+    background-color: none;
+}
+
+.post_box2{
+    padding:40px;
+    margin: 10px;
+    margin-top: 0px;
+    padding-top: 0px;
+    border-bottom:5px solid;
+    border-color: gray;
+    background-color: none;
+}
+
+.point_icon{
+    height: 30px;
+    float: right;
+    padding: 5px;
+
+}
+
+#sidbar{
+    /*border: 5px solid rgb(92, 238, 34);
+    background-color: rgba(6, 51, 8, 0.404);
+    margin-bottom: 10px; */
+    width: 100%;
+    position: absolute;
+}
+
+
+#sidebar_b{
+    border: 2px solid ;
+    border-color:white;
+    margin-bottom: 10px;
+    width: 14%;
+    float: right;
+}
+#sidebar_a{
+    border: 2px solid white;
+    margin-bottom: 10px;
+    width: 15%;
+    float: left;
+}
+
+#footer{
+    clear: both;
+    border: 5px solid white;
+    background-color: white;
+    height: 300px;
+
+}

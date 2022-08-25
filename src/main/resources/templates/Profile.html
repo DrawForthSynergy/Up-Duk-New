@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>마이페이지</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+        header{
+            background-color:white;
+        }
+        body{
+            margin:0px;
+        }
+        .Kduksung{
+            width:20%;
+            height:10%;
+        }
+        .Kimg{
+            display:flex;
+        }
+        .Kimg button{
+            border:none;
+            background:none;
+            margin:0 20px;
+            position:relative;
+            right:-74%;
+        }
+        .KloginImg{
+            width:40px;
+            height:40px;
+        }
+        .KsmallTitle{
+            font-family: 'Gothic A1', sans-serif;
+            text-align:center;
+            line-height:26.79px;
+            font-size:20px;
+        }
+        .Ktitle{
+            font-family: 'Gothic A1', sans-serif;
+            text-align:center;
+            font-size:90px;
+        }
+        .Knav{
+            position:sticky;
+            top:0;
+        }
+        .Knavbar{
+            width:100%;
+            height:47px;
+            background-color:#B70050
+        }
+        footer{
+            text-align:center;
+            background-color:#F7F7F7;
+        }
+
+        .Knavbar ul{
+            margin:0 350px;
+            list-style:none;
+            padding-left:0px;
+            display:flex;
+        }
+        .Knavbar li{
+            line-height:47px;
+            align-items:center;
+            color:white;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div>
+        <div class="Kimg">
+            <img class="Kduksung" src="https://static.wixstatic.com/media/1a8c11_b1395f489dff42a7884d94bd7759d15a~mv2.jpg/v1/fill/w_437,h_101,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/%EB%8D%95%EC%84%B1%EC%97%AC%EB%8C%80%20%EB%A1%9C%EA%B3%A0_edited.jpg">
+            <button> <a href="/profile"><img class="KloginImg" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1b3bac2f-0697-483c-8e23-8697db4cdf65/user_icon_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T062907Z&X-Amz-Expires=86400&X-Amz-Signature=309df45ff43def5abed8dfde51fa2792c07596696583a07fcaee54be87e3a055&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22user_icon_1.png%22&x-id=GetObject"></a></button>
+        </div>
+        <div class="KsmallTitle">
+            <span>덕대생들의 취업UP 정보 공유 커뮤니티</span>
+        </div>
+        <div class="Ktitle">
+            <spna>UP-Duk</spna>
+        </div>
+
+    </div>
+    <nav class="Knav">
+        <div class="Knavbar">
+            <ul>
+                <li><span>홈</span></li>
+                <li><span>전공</span></li>
+                <li><span>직무</span></li>
+
+            </ul>
+        </div>
+    </nav>
+
+</header>
+
+<div class="profile-wrapper" style="padding: 150px 150px; width: 900px; margin: 0px auto; background-color: #65122d">
+    <!--프로필 사진 및 전공~-->
+    <div id="main-content">
+        <div style="float: left;">
+            <img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1791c639-b9ec-4ddc-b7d1-20dc42b5ebdb/berry.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220825T154410Z&X-Amz-Expires=86400&X-Amz-Signature=54edd2b3404bdf1785b00b79180817308108d0b99221111e37a5473b61477d36&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22berry.png%22&x-id=GetObject" width= "200" alt="none">
+        </div>
+        <div style="float: left; line-height: 1.50em; padding: 30px; color: #ffffff;">
+            <br>
+            <p>❤ berry 등급</p>
+            <h1>이덕우</h1>
+            <p style="color: #000000;">컴퓨터 공학 전공 · 게시글 8</p>
+<!--            <p style="color: #000000;" sec:authentication="name">-->
+            <p style="color: #000000;">가입일: 2020년 08월 25일</p>
+
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--회원 상세-->
+<div style="padding: 50px 150px; width: 900px; margin: 10px auto; background-color: #f7f7f7">
+    <!--내가 쓴 글-->
+    <div style="margin: 0 auto;">
+        <h1>내가 쓴 글</h1>
+        <p style="text-align: right; padding: 0px 40px;">더보기 ></p>
+        <div style="margin: 30px; padding: 30px 30px; width: 750px; margin 10px auto; background-color: white">
+            <h3>삼성 인적성 검사 어때요?</h3>
+            <hr>
+            <p>아니 삼성 서류까지는 합격했는데 인적성 검사 왤케 어려워요?</p>
+            <p style="text-align: right;">👍 3개 · 💬 5개</p>
+        </div>
+        <div style="margin: 30px; padding: 30px 30px; width: 750px; margin 10px auto; background-color: white">
+            <h3>삼성 1차 서류 합격한 후기</h3>
+            <hr>
+            <p>삼성 1차 서류 저는 합격했습니다. 모든 내용은 성과 위주로 작성하였고, 경험험 위주로 작성하니 쉬웠던 것 같네요. 꿀팁을 드리자면, 두괄식으로 자소서를 써야 하고...</p>
+            <p style="text-align: right;">👍 65개 · 💬 8개</p>
+        </div>
+        <div style="margin: 30px; padding: 30px 30px; width: 750px; margin 10px auto; background-color: white">
+            <h3>이번에 카카오 채용 연계형 인턴 뜬 거 보셨나요</h3>
+            <br>
+            <hr>
+            <p>하시는 분 계신가요</p>
+            <p style="text-align: right;">👍 0개 · 💬 4개</p>
+        </div>
+
+        <br>
+        <br>
+
+    </div>
+</div>
+</body>
+</html>
