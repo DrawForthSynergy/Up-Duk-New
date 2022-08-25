@@ -40,11 +40,6 @@
             <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="fieldError">Incorrect data</p>
         </div>
         <div class="form-group">
-            <label th:for="password">비밀번호</label>
-            <input type="password" th:field="*{password}" class="form-control" placeholder="비밀번호 입력">
-            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="fieldError">Incorrect data</p>
-        </div>
-        <div class="form-group">
             <label th:for="address">전공</label>
             <input type="text" th:field="*{address}" class="form-control" placeholder="전공을 입력해주세요">
             <p th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="fieldError">Incorrect data</p>
@@ -53,6 +48,11 @@
             <label th:for="address">학번</label>
             <input type="text" th:field="*{address}" class="form-control" placeholder="학번 입력해주세요">
             <p th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="fieldError">Incorrect data</p>
+        </div>
+        <div class="form-group">
+            <label th:for="password">비밀번호</label>
+            <input type="password" th:field="*{password}" class="form-control" placeholder="비밀번호 입력">
+            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="fieldError">Incorrect data</p>
         </div>
         <div style="text-align: center">
             <button type="submit" class="btn btn-primary" style="">Submit</button>

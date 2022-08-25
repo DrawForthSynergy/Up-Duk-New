@@ -14,4 +14,9 @@ public class MainController {
         return "main";
     }
 
+    @GetMapping("/community")
+    public String communityWrite() {
+        return "communityWrite";
+    }
+
 }
