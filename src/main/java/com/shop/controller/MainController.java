@@ -14,6 +14,7 @@ public class MainController {
         return "main";
     }
 
+<<<<<<< HEAD
     @GetMapping(value = "/community")
     public String write(){
         return "communityWrite";
@@ -39,4 +40,11 @@ public class MainController {
         return "community/list3";
     }
 
+=======
+    @GetMapping("/community")
+    public String communityWrite() {
+        return "communityWrite";
+    }
+
+>>>>>>> adcdb7cf51f8c65b77e162c18c34cfdb483386d6
 }
